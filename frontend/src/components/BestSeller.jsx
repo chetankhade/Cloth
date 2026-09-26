@@ -21,7 +21,7 @@ const BestSeller = () => {
       <div className='text-center text-3xl py-8'>
         <Title text1={'BEST'} text2={'SELLERS'}/>
         <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
-        Find the best collection in Surat, India — from ethnic wear to electronics, gifts, and home products. Shop the latest arrivals only at forever and upgrade your everyday living!
+        Find the best collection in Maharashtra, India — from ethnic wear to electronics, gifts, and home products. Shop the latest arrivals only at forever and upgrade your everyday living!
         </p>
       </div>
 

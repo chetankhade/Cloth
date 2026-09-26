@@ -14,14 +14,14 @@ const About = () => {
       <div className='my-10 flex flex-col md:flex-row gap-16'>
           <img className='w-full md:max-w-[450px]' src={assets.about_img} alt="" />
           <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600'>
-              <p>Nivik was born out of a passion for innovation and a desire to revolutionize the way people shop online. Our journey began with a simple idea — to create a platform where customers can easily discover, explore, and shop a wide range of fashion, beauty, electronics, home essentials, and lifestyle products from the comfort of their homes.
+              <p>forever was born out of a passion for innovation and a desire to revolutionize the way people shop online. Our journey began with a simple idea — to create a platform where customers can easily discover, explore, and shop a wide range of fashion, beauty, electronics, home essentials, and lifestyle products from the comfort of their homes.
 
-Since our inception, Nivik has worked tirelessly to curate a diverse selection of high-quality products that cater to every taste and preference. From Women’s Ethnic & Western Wear, Men’s and Kids’ Apparels, to Home & Kitchen, Jewellery, Gifts, Toys, and Mobile Accessories, every item is handpicked from trusted brands and suppliers.</p>
+Since our inception, forever has worked tirelessly to curate a diverse selection of high-quality products that cater to every taste and preference. From Women’s Ethnic & Western Wear, Men’s and Kids’ Apparels, to Home & Kitchen, Jewellery, Gifts, Toys, and Mobile Accessories, every item is handpicked from trusted brands and suppliers.</p>
               <p>Since our inception, we've worked tirelessly to curate a diverse selection of high-quality products that cater to every taste and preference. From fashion and beauty to electronics and home essentials, we offer an extensive collection sourced from trusted brands and suppliers.</p>
               <b className='text-gray-800'>Our Mission</b>
-              <p>At Nivik, our mission is to empower customers with choice, convenience, and confidence. We’re dedicated to offering a seamless, secure, and satisfying shopping experience — from browsing and ordering to fast delivery and customer support.
+              <p>At forever, our mission is to empower customers with choice, convenience, and confidence. We’re dedicated to offering a seamless, secure, and satisfying shopping experience — from browsing and ordering to fast delivery and customer support.
 
-Shop Smart. Shop Stylish. Shop Nivik — where quality meets trust.</p>
+Shop Smart. Shop Stylish. Shop forever — where quality meets trust.</p>
           </div>
       </div>
 

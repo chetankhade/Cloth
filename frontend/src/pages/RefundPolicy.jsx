@@ -10,7 +10,7 @@ const RefundPolicy = () => {
 
         <div className='flex flex-col gap-6 text-gray-600 text-sm md:text-base mb-20'>
             <p>
-                Thank you for shopping at Nivik Store.
+                Thank you for shopping at forever Store.
             </p>
             <p>
                 If, for any reason, You are not completely satisfied with a purchase We invite You to review our policy on refunds and returns.

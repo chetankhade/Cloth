@@ -16,7 +16,7 @@ const Contact = () => {
         <div className='flex flex-col justify-center items-start gap-6 backdrop-blur-xl bg-white/30 border border-white/40 shadow-lg rounded-xl p-8 md:p-12'>
           <p className='font-semibold text-xl text-gray-600'>Our Store</p>
           <p className=' text-gray-500'>Santoshikrupa, Bapa Sitram, Katargam <br /> Surat, Gujarat, India</p>
-          <p className=' text-gray-500'>Phone: +91 7600032223 <br />Phone: +917874299732<br />Email: nivikstore01@gmail.com</p>
+          <p className=' text-gray-500'>Phone: +91 7600032223 <br />Phone: +917874299732<br />Email: foreverstore01@gmail.com</p>
         </div>
       </div>
 

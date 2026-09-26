@@ -30,11 +30,11 @@ const ShippingPolicy = () => {
             </p>
             <p>
                 <strong>Customs, Duties and Taxes</strong><br/>
-                Nivik Store is not responsible for any customs and taxes applied to your order. All fees imposed during or after shipping are the responsibility of the customer (tariffs, taxes, etc.).
+                forever Store is not responsible for any customs and taxes applied to your order. All fees imposed during or after shipping are the responsibility of the customer (tariffs, taxes, etc.).
             </p>
             <p>
                 <strong>Damages</strong><br/>
-                Nivik Store is not liable for any products damaged or lost during shipping. If you received your order damaged, please contact the shipment carrier to file a claim. Please save all packaging materials and damaged goods before filing a claim.
+                forever Store is not liable for any products damaged or lost during shipping. If you received your order damaged, please contact the shipment carrier to file a claim. Please save all packaging materials and damaged goods before filing a claim.
             </p>
         </div>
     </div>

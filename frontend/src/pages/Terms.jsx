@@ -10,28 +10,28 @@ const Terms = () => {
 
         <div className='flex flex-col gap-6 text-gray-600 text-sm md:text-base mb-20'>
             <p>
-                Welcome to Nivik Store! These terms and conditions outline the rules and regulations for the use of Nivik Store's Website.
+                Welcome to forever Store! These terms and conditions outline the rules and regulations for the use of forever Store's Website.
             </p>
             <p>
-                By accessing this website we assume you accept these terms and conditions. Do not continue to use Nivik Store if you do not agree to take all of the terms and conditions stated on this page.
+                By accessing this website we assume you accept these terms and conditions. Do not continue to use forever Store if you do not agree to take all of the terms and conditions stated on this page.
             </p>
             <p>
                 The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves.
             </p>
             <p>
                 <strong>Cookies</strong><br/>
-                We employ the use of cookies. By accessing Nivik Store, you agreed to use cookies in agreement with the Nivik Store's Privacy Policy.
+                We employ the use of cookies. By accessing forever Store, you agreed to use cookies in agreement with the forever Store's Privacy Policy.
             </p>
             <p>
                 <strong>License</strong><br/>
-                Unless otherwise stated, Nivik Store and/or its licensors own the intellectual property rights for all material on Nivik Store. All intellectual property rights are reserved. You may access this from Nivik Store for your own personal use subjected to restrictions set in these terms and conditions.
+                Unless otherwise stated, forever Store and/or its licensors own the intellectual property rights for all material on forever Store. All intellectual property rights are reserved. You may access this from forever Store for your own personal use subjected to restrictions set in these terms and conditions.
             </p>
             <p>
                 You must not:<br/>
-                - Republish material from Nivik Store<br/>
-                - Sell, rent or sub-license material from Nivik Store<br/>
-                - Reproduce, duplicate or copy material from Nivik Store<br/>
-                - Redistribute content from Nivik Store
+                - Republish material from forever Store<br/>
+                - Sell, rent or sub-license material from forever Store<br/>
+                - Reproduce, duplicate or copy material from forever Store<br/>
+                - Redistribute content from forever Store
             </p>
             <p>
                 <strong>Disclaimer</strong><br/>

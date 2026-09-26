@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Deployment Setup Script for NivikStore.com
+# Deployment Setup Script for foreverstore.com
 # Usage: ./setup.sh <GITHUB_REPO_URL>
 
 REPO_URL=$1
@@ -23,13 +23,13 @@ sudo npm install -g pm2
 # 2. Clone Repository
 echo "⬇️ Cloning repository..."
 cd /var/www
-if [ -d "nivikstore" ]; then
-    echo "Directory nivikstore already exists. Pulling latest changes..."
-    cd nivikstore
+if [ -d "foreverstore" ]; then
+    echo "Directory foreverstore already exists. Pulling latest changes..."
+    cd foreverstore
     sudo git pull
 else
-    sudo git clone $REPO_URL nivikstore
-    cd nivikstore
+    sudo git clone $REPO_URL foreverstore
+    cd foreverstore
 fi
 
 # 3. Backend Setup
@@ -60,13 +60,13 @@ npm run build
 
 # 6. Nginx Configuration
 echo "🌐 Configuring Nginx..."
-sudo tee /etc/nginx/sites-available/nivikstore > /dev/null <<EOF
+sudo tee /etc/nginx/sites-available/foreverstore > /dev/null <<EOF
 server {
     listen 80;
-    server_name nivikstore.com www.nivikstore.com;
+    server_name foreverstore.com www.foreverstore.com;
 
     location / {
-        root /var/www/nivikstore/frontend/dist;
+        root /var/www/foreverstore/frontend/dist;
         index index.html;
         try_files \$uri \$uri/ /index.html;
     }
@@ -83,23 +83,23 @@ server {
 
 server {
     listen 80;
-    server_name admin.nivikstore.com;
+    server_name admin.foreverstore.com;
 
     location / {
-        root /var/www/nivikstore/admin/dist;
+        root /var/www/foreverstore/admin/dist;
         index index.html;
         try_files \$uri \$uri/ /index.html;
     }
 }
 EOF
 
-sudo ln -s /etc/nginx/sites-available/nivikstore /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/foreverstore /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
 
 # 7. SSL Setup
 echo "🔒 Setting up SSL..."
 sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d nivikstore.com -d www.nivikstore.com -d admin.nivikstore.com --non-interactive --agree-tos -m admin@nivikstore.com
+sudo certbot --nginx -d foreverstore.com -d www.foreverstore.com -d admin.foreverstore.com --non-interactive --agree-tos -m admin@foreverstore.com
 
-echo "✅ Deployment Complete! Visit https://nivikstore.com"
+echo "✅ Deployment Complete! Visit https://foreverstore.com"

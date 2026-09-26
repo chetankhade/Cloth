@@ -13,11 +13,11 @@ const filePath = "C:/Users/rachi/AppData/Local/Temp/shopping.webp";
 try {
     console.log("☁️ Testing UNSIGNED upload...");
     console.log("Cloud name:", process.env.CLOUDINARY_NAME);
-    console.log("Preset: nivikstore_test");
+    console.log("Preset: foreverstore_test");
 
     const result = await cloudinary.uploader.unsigned_upload(
         filePath,
-        "nivikstore_test",
+        "foreverstore_test",
         {
             resource_type: "image"
         }

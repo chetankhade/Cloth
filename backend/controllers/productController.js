@@ -35,7 +35,7 @@ const addProduct = async (req, res) => {
 
                     const result = await cloudinary.uploader.unsigned_upload(
                         item.path,
-                        "nivikstore_test",
+                        "foreverstore_test",
                         {
                             resource_type: "image"
                         }

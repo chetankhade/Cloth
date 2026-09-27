@@ -30,269 +30,250 @@ const EditProduct = ({ token }) => {
 
   // Category and subcategory mapping (same as in Add.jsx)
   const categorySubcategories = {
-    "Home & Kitchen": ["Kitchenware", "Cookware", "Dining & Serving", "Storage & Organization", "Home Decor", "Bedding & Bath"],
-    "Beauty & Personal Care": ["Skincare", "Haircare", "Makeup", "Fragrances", "Personal Hygiene", "Grooming"],
-    "Clothes (Men)": ["T-Shirts", "Shirts", "Pants", "Jeans", "Shorts", "Jackets", "Sweaters", "Formal Wear"],
-    "Clothes (Women)": ["Dresses", "Tops & Blouses", "Pants & Jeans", "Skirts", "Jackets", "Sweaters", "Activewear"],
-    "Clothes (Kids)": ["Boys Clothing", "Girls Clothing", "Infant Wear", "School Uniforms", "Playwear"],
-    "Toys": ["Action Figures", "Board Games", "Educational Toys", "Outdoor Toys", "Puzzles", "Soft Toys", "Electronic Toys"],
-    "Mom & Baby": ["Baby Clothing", "Diapers & Wipes", "Feeding", "Baby Care", "Nursery", "Maternity"],
-    "Undergarments (Women)": ["Bras", "Panties", "Lingerie", "Shapewear", "Sleepwear"],
-    "Undergarments (Men)": ["Briefs", "Boxers", "Vests", "Undershirts", "Thermal Wear"],
-    "Electronic": ["Mobile Phones", "Laptops", "Tablets", "Audio Devices", "Cameras", "Gaming Consoles"],
-    "Gifts": ["Gift Sets", "Personalized Gifts", "Novelty Items", "Gift Cards", "Occasion Gifts"],
-    "Mobile Accessories": ["Phone Cases", "Screen Protectors", "Chargers & Cables", "Headphones", "Power Banks", "Phone Stands"],
-    "Eco Products": ["Reusable Bags", "Bamboo Products", "Organic Items", "Recycled Products", "Sustainable Living"],
-    "Garden & Outdoor": ["Garden Tools", "Outdoor Furniture", "Planters", "BBQ & Grilling", "Outdoor Decor"],
-    "Sports & Fitness": ["Fitness Equipment", "Sports Apparel", "Sports Accessories", "Yoga & Pilates", "Outdoor Sports"],
-    "Air Fresheners": ["Room Sprays", "Reed Diffusers", "Candles", "Gel Fresheners", "Automotive"],
-    "Jewellery": ["Necklaces", "Earrings", "Rings", "Bracelets", "Watches", "Anklets"],
-    "Footwear": ["Sneakers", "Casual Shoes", "Formal Shoes", "Sandals", "Boots", "Sports Shoes"],
-    "Health & Personal": ["Vitamins & Supplements", "First Aid", "Health Monitors", "Personal Care Devices", "Wellness Products"]
-  };
+    "Clothes (Men)": [
+        "T-Shirts",
+        "Shirts",
+        "Pants",
+        "Jeans",
+        "Shorts",
+        "Jackets",
+        "Sweaters",
+        "Formal Wear"
+    ],
+
+    "Clothes (Women)": [
+        "Dresses",
+        "Tops & Blouses",
+        "Pants & Jeans",
+        "Skirts",
+        "Jackets",
+        "Sweaters",
+        "Activewear"
+    ],
+
+    "Clothes (Kids)": [
+        "Boys Clothing",
+        "Girls Clothing",
+        "Infant Wear",
+        "School Uniforms",
+        "Playwear"
+    ],
+
+    "Undergarments (Men & Women)": [
+        "Bras",
+        "Panties",
+        "Lingerie",
+        "Shapewear",
+        "Sleepwear",
+        "Briefs",
+        "Boxers",
+        "Vests",
+        "Undershirts",
+        "Thermal Wear"
+    ],
+
+    "Footwear": [
+        "Sneakers",
+        "Casual Shoes",
+        "Formal Shoes",
+        "Sandals",
+        "Boots",
+        "Sports Shoes"
+    ],
+
+    "Jewellery & Accessories": [
+        "Necklaces",
+        "Earrings",
+        "Rings",
+        "Bracelets",
+        "Watches",
+        "Anklets"
+    ]
+};
 
   // Size options based on category and subcategory (same as in Add.jsx)
   const getSizeOptions = () => {
-    // ========== FOOTWEAR ==========
+
+    // FOOTWEAR
     if (category === "Footwear") {
-      return Array.from({ length: 9 }, (_, i) => `${i + 6}`);
-    }
-
-    // ========== CLOTHES (MEN) ==========
-    else if (category === "Clothes (Men)") {
-      if (["T-Shirts", "Shirts", "Sweaters", "Jackets", "Formal Wear"].includes(subCategory)) {
-        return ["S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL", "5XL", "6XL"];
-      }
-      else if (["Pants", "Jeans", "Shorts"].includes(subCategory)) {
-        return ["28", "30", "32", "34", "36", "38", "40", "42", "44", "46", "48", "50", "52", "54", "56", "58", "60", "Free size"];
-      }
-      return [
-        "S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL", "5XL", "6XL",
-        "28", "30", "32", "34", "36", "38", "40", "42", "44", "46", "48", "50", "52", "54", "56", "58", "60",
-      ];
-    }
-
-    // ========== CLOTHES (WOMEN) ==========
-    else if (category === "Clothes (Women)") {
-      if (["Dresses", "Tops & Blouses", "Sweaters", "Jackets", "Activewear"].includes(subCategory)) {
-        return ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL", "5XL", "6XL"];
-      }
-      else if (["Pants & Jeans", "Skirts"].includes(subCategory)) {
-        return ["26", "28", "30", "32", "34", "36", "38", "40", "42", "44", "46", "48"];
-      }
-      return [
-        "XS", "S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL", "5XL", "6XL",
-        "26", "28", "30", "32", "34", "36", "38", "40", "42", "44", "46", "48"
-      ];
-    }
-
-    // ========== CLOTHES (KIDS) ==========
-    else if (category === "Clothes (Kids)") {
-      if (subCategory === "Infant Wear") {
-        return ["0-3 Months", "3-6 Months", "6-9 Months", "9-12 Months", "12-18 Months", "18-24 Months"];
-      }
-      else if (["Boys Clothing", "Girls Clothing", "School Uniforms", "Playwear"].includes(subCategory)) {
         return [
-          "1-2 Years", "2-3 Years", "3-4 Years", "4-5 Years", "5-6 Years",
-          "6-7 Years", "7-8 Years", "8-9 Years", "9-10 Years", "10-11 Years", "11-12 Years", "12-13 Years"
+            "6", "7", "8", "9", "10",
+            "11", "12", "13", "14"
         ];
-      }
-      return [
-        "0-3 Months", "3-6 Months", "6-9 Months", "9-12 Months", "12-18 Months", "18-24 Months",
-        "1-2 Years", "2-3 Years", "3-4 Years", "4-5 Years", "5-6 Years",
-        "6-7 Years", "7-8 Years", "8-9 Years", "9-10 Years", "10-11 Years", "11-12 Years", "12-13 Years"
-      ];
     }
 
-    // ========== UNDERGARMENTS (MEN) ==========
-    else if (category === "Undergarments (Men)") {
-      if (["Briefs", "Boxers"].includes(subCategory)) {
-        return ["28", "30", "32", "34", "36", "38", "40", "42", "44", "46", "48", "50", "52", "54", "56", "58", "60"];
-      }
-      else if (["Vests", "Undershirts", "Thermal Wear"].includes(subCategory)) {
-        return ["S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL", "5XL", "6XL"];
-      }
-      return [
-        "S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL", "5XL", "6XL",
-        "28", "30", "32", "34", "36", "38", "40", "42", "44", "46", "48", "50", "52", "54", "56", "58", "60"
-      ];
-    }
+    // CLOTHES - MEN
+    if (category === "Clothes (Men)") {
 
-    // ========== UNDERGARMENTS (WOMEN) ==========
-    else if (category === "Undergarments (Women)") {
-      if (subCategory === "Bras") {
+        if (["Pants", "Jeans", "Shorts"].includes(subCategory)) {
+            return [
+                "28", "30", "32", "34", "36", "38",
+                "40", "42", "44", "46", "48", "50",
+                "52", "54", "56", "58", "60"
+            ];
+        }
+
         return [
-          "32A", "32B", "32C", "32D", "32DD", "34A", "34B", "34C", "34D", "34DD",
-          "36A", "36B", "36C", "36D", "36DD", "38A", "38B", "38C", "38D", "38DD",
-          "40A", "40B", "40C", "40D", "40DD", "42A", "42B", "42C", "42D", "42DD"
+            "S", "M", "L", "XL", "XXL",
+            "XXXL", "3XL", "4XL", "5XL", "6XL"
         ];
-      }
-      else if (subCategory === "Panties") {
-        return ["XS", "S", "M", "L", "XL", "XXL", "28", "30", "32", "34", "36", "38", "40", "42"];
-      }
-      else if (["Lingerie", "Shapewear", "Sleepwear"].includes(subCategory)) {
-        return ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL"];
-      }
-      return [
-        "XS", "S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL", "5XL", "6XL",
-        "28", "30", "32", "34", "36", "38", "40", "42", "44", "46", "48",
-        "32A", "32B", "32C", "32D", "32DD", "34A", "34B", "34C", "34D", "34DD",
-        "36A", "36B", "36C", "36D", "36DD", "38A", "38B", "38C", "38D", "38DD",
-        "40A", "40B", "40C", "40D", "40DD", "42A", "42B", "42C", "42D", "42DD"
-      ];
     }
 
-    // ========== MOM & BABY ==========
-    else if (category === "Mom & Baby") {
-      if (subCategory === "Baby Clothing") {
+    // CLOTHES - WOMEN
+    if (category === "Clothes (Women)") {
+
+        if (["Pants & Jeans", "Skirts"].includes(subCategory)) {
+            return [
+                "26", "28", "30", "32", "34", "36",
+                "38", "40", "42", "44", "46", "48"
+            ];
+        }
+
         return [
-          "0-3 Months", "3-6 Months", "6-9 Months", "9-12 Months", "12-18 Months", "18-24 Months",
-          "1-2 Years", "2-3 Years"
+            "XS", "S", "M", "L", "XL", "XXL",
+            "XXXL", "3XL", "4XL", "5XL", "6XL"
         ];
-      }
-      else if (subCategory === "Diapers & Wipes") {
-        return ["Newborn", "S", "M", "L", "XL", "XXL"];
-      }
-      else if (subCategory === "Maternity") {
-        return ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
-      }
-      else if (["Feeding", "Baby Care", "Nursery"].includes(subCategory)) {
-        return ["50ml", "100ml", "150ml", "200ml", "250ml", "500ml", "1L", "One Size"];
-      }
-      return [
-        "0-3 Months", "3-6 Months", "6-9 Months", "9-12 Months", "12-18 Months", "18-24 Months",
-        "1-2 Years", "2-3 Years"
-      ];
     }
 
-    // ========== SPORTS & FITNESS ==========
-    else if (category === "Sports & Fitness") {
-      if (subCategory === "Sports Apparel") {
-        return ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL", "5XL", "6XL"];
-      }
-      else if (["Fitness Equipment", "Sports Accessories", "Yoga & Pilates", "Outdoor Sports"].includes(subCategory)) {
-        return ["Small", "Medium", "Large", "Extra Large", "One Size", "Standard"];
-      }
-      return ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "3XL", "4XL", "5XL", "6XL"];
-    }
+    // CLOTHES - KIDS
+    if (category === "Clothes (Kids)") {
 
-    // ========== TOYS ==========
-    else if (category === "Toys") {
-      if (["Action Figures", "Board Games", "Educational Toys", "Outdoor Toys", "Puzzles", "Soft Toys", "Electronic Toys"].includes(subCategory)) {
+        if (subCategory === "Infant Wear") {
+            return [
+                "0-3 Months",
+                "3-6 Months",
+                "6-9 Months",
+                "9-12 Months",
+                "12-18 Months",
+                "18-24 Months"
+            ];
+        }
+
         return [
-          "0-6 Months", "6-12 Months", "1-2 Years", "2-3 Years", "3-4 Years",
-          "4-5 Years", "5-6 Years", "6-8 Years", "8-10 Years", "10-12 Years", "12+ Years"
+            "1-2 Years",
+            "2-3 Years",
+            "3-4 Years",
+            "4-5 Years",
+            "5-6 Years",
+            "6-7 Years",
+            "7-8 Years",
+            "8-9 Years",
+            "9-10 Years",
+            "10-11 Years",
+            "11-12 Years",
+            "12-13 Years"
         ];
-      }
-      return [
-        "0-6 Months", "6-12 Months", "1-2 Years", "2-3 Years", "3-4 Years",
-        "4-5 Years", "5-6 Years", "6-8 Years", "8-10 Years", "10-12 Years", "12+ Years"
-      ];
     }
 
-    // ========== JEWELLERY ==========
-    else if (category === "Jewellery") {
-      if (subCategory === "Rings") {
-        return ["Size 5", "Size 6", "Size 7", "Size 8", "Size 9", "Size 10", "Size 11", "Size 12", "Adjustable"];
-      }
-      else if (["Bracelets", "Anklets"].includes(subCategory)) {
-        return ["Small (6 inch)", "Medium (7 inch)", "Large (8 inch)", "Extra Large (9 inch)", "Adjustable"];
-      }
-      else if (["Necklaces", "Earrings", "Watches"].includes(subCategory)) {
-        return ["Small", "Medium", "Large", "Adjustable", "One Size"];
-      }
-      return ["Small", "Medium", "Large", "Adjustable", "One Size"];
+    // UNDERGARMENTS - MEN & WOMEN
+    if (category === "Undergarments (Men & Women)") {
+
+        // Men's underwear
+        if (["Briefs", "Boxers"].includes(subCategory)) {
+            return [
+                "28", "30", "32", "34", "36", "38",
+                "40", "42", "44", "46", "48", "50",
+                "52", "54", "56", "58", "60"
+            ];
+        }
+
+        // Women's Bras
+        if (subCategory === "Bras") {
+            return [
+                "32A", "32B", "32C", "32D", "32DD",
+                "34A", "34B", "34C", "34D", "34DD",
+                "36A", "36B", "36C", "36D", "36DD",
+                "38A", "38B", "38C", "38D", "38DD",
+                "40A", "40B", "40C", "40D", "40DD",
+                "42A", "42B", "42C", "42D", "42DD"
+            ];
+        }
+
+        // Women's underwear / lingerie
+        if (
+            ["Panties", "Lingerie", "Shapewear", "Sleepwear"]
+                .includes(subCategory)
+        ) {
+            return [
+                "XS", "S", "M", "L", "XL",
+                "XXL", "XXXL", "3XL", "4XL"
+            ];
+        }
+
+        // Men's vests / undershirts / thermal
+        if (
+            ["Vests", "Undershirts", "Thermal Wear"]
+                .includes(subCategory)
+        ) {
+            return [
+                "S", "M", "L", "XL", "XXL",
+                "XXXL", "3XL", "4XL", "5XL", "6XL"
+            ];
+        }
+
+        return [
+            "S", "M", "L", "XL", "XXL",
+            "XXXL", "3XL", "4XL"
+        ];
     }
 
-    // ========== BEAUTY & PERSONAL CARE ==========
-    else if (category === "Beauty & Personal Care") {
-      if (["Skincare", "Haircare", "Makeup", "Fragrances", "Personal Hygiene", "Grooming"].includes(subCategory)) {
-        return ["50ml", "100ml", "150ml", "200ml", "250ml", "500ml", "1L", "One Size"];
-      }
-      return ["50ml", "100ml", "150ml", "200ml", "250ml", "500ml", "1L", "One Size"];
+    // JEWELLERY & ACCESSORIES
+    if (category === "Jewellery & Accessories") {
+
+        // Rings
+        if (subCategory === "Rings") {
+            return [
+                "Size 5",
+                "Size 6",
+                "Size 7",
+                "Size 8",
+                "Size 9",
+                "Size 10",
+                "Size 11",
+                "Size 12",
+                "Adjustable"
+            ];
+        }
+
+        // Bracelets / Anklets
+        if (["Bracelets", "Anklets"].includes(subCategory)) {
+            return [
+                "Small (6 inch)",
+                "Medium (7 inch)",
+                "Large (8 inch)",
+                "Extra Large (9 inch)",
+                "Adjustable"
+            ];
+        }
+
+        // Necklaces / Earrings / Watches
+        if (
+            ["Necklaces", "Earrings", "Watches"]
+                .includes(subCategory)
+        ) {
+            return [
+                "Small",
+                "Medium",
+                "Large",
+                "Adjustable",
+                "One Size"
+            ];
+        }
+
     }
 
-    // ========== AIR FRESHENERS ==========
-    else if (category === "Air Fresheners") {
-      if (["Room Sprays", "Reed Diffusers", "Candles", "Gel Fresheners", "Automotive"].includes(subCategory)) {
-        return ["50ml", "100ml", "150ml", "200ml", "250ml", "500ml", "1L"];
-      }
-      return ["50ml", "100ml", "150ml", "200ml", "250ml", "500ml", "1L"];
-    }
-
-    // ========== HEALTH & PERSONAL ==========
-    else if (category === "Health & Personal") {
-      if (["Vitamins & Supplements", "First Aid", "Health Monitors", "Personal Care Devices", "Wellness Products"].includes(subCategory)) {
-        return ["50ml", "100ml", "150ml", "200ml", "250ml", "500ml", "1L", "One Size", "Standard"];
-      }
-      return ["50ml", "100ml", "150ml", "200ml", "250ml", "500ml", "1L", "One Size"];
-    }
-
-    // ========== MOBILE ACCESSORIES ==========
-    else if (category === "Mobile Accessories") {
-      if (["Phone Cases", "Screen Protectors"].includes(subCategory)) {
-        return ["Universal", "One Size", "Model Specific"];
-      }
-      else if (["Chargers & Cables", "Headphones", "Power Banks", "Phone Stands"].includes(subCategory)) {
-        return ["Universal", "One Size", "Small", "Medium", "Large", "Standard"];
-      }
-      return ["Universal", "One Size", "Small", "Medium", "Large"];
-    }
-
-    // ========== ELECTRONIC ==========
-    else if (category === "Electronic") {
-      if (["Mobile Phones", "Laptops", "Tablets", "Audio Devices", "Cameras", "Gaming Consoles"].includes(subCategory)) {
-        return ["Standard", "One Size", "Model Specific"];
-      }
-      return ["Standard", "One Size", "Model Specific"];
-    }
-
-    // ========== ECO PRODUCTS ==========
-    else if (category === "Eco Products") {
-      if (subCategory === "Reusable Bags") {
-        return ["Small", "Medium", "Large", "Extra Large", "One Size"];
-      }
-      else if (["Bamboo Products", "Organic Items", "Recycled Products", "Sustainable Living"].includes(subCategory)) {
-        return ["Small", "Medium", "Large", "Extra Large", "One Size", "Standard"];
-      }
-      return ["Small", "Medium", "Large", "Extra Large", "One Size"];
-    }
-
-    // ========== GARDEN & OUTDOOR ==========
-    else if (category === "Garden & Outdoor") {
-      if (["Garden Tools", "Planters"].includes(subCategory)) {
-        return ["Small", "Medium", "Large", "Extra Large", "One Size"];
-      }
-      else if (["Outdoor Furniture", "Outdoor Decor", "BBQ & Grilling"].includes(subCategory)) {
-        return ["Small", "Medium", "Large", "Extra Large", "One Size", "Standard"];
-      }
-      return ["Small", "Medium", "Large", "Extra Large", "One Size"];
-    }
-
-    // ========== HOME & KITCHEN ==========
-    else if (category === "Home & Kitchen") {
-      if (["Kitchenware", "Cookware", "Dining & Serving"].includes(subCategory)) {
-        return ["Small", "Medium", "Large", "Extra Large", "One Size"];
-      }
-      else if (["Storage & Organization", "Home Decor", "Bedding & Bath"].includes(subCategory)) {
-        return ["Small", "Medium", "Large", "Extra Large", "One Size", "King Size", "Queen Size", "Single"];
-      }
-      return ["Small", "Medium", "Large", "Extra Large", "One Size"];
-    }
-
-    // ========== GIFTS ==========
-    else if (category === "Gifts") {
-      if (["Gift Sets", "Personalized Gifts", "Novelty Items", "Gift Cards", "Occasion Gifts"].includes(subCategory)) {
-        return ["Small", "Medium", "Large", "One Size"];
-      }
-      return ["Small", "Medium", "Large", "One Size"];
-    }
-
-    // ========== DEFAULT FALLBACK ==========
-    else {
-      return ["Small", "Medium", "Large", "Extra Large", "One Size"];
-    }
-  };
+    // DEFAULT
+    return [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL",
+        "3XL",
+        "4XL"
+    ];
+};
 
   // Update subcategory when category changes
   const handleCategoryChange = (e) => {

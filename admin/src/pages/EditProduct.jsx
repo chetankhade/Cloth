@@ -20,8 +20,8 @@ const EditProduct = ({ token }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("Home & Kitchen");
-  const [subCategory, setSubCategory] = useState("Kitchenware");
+  const [category, setCategory] = useState("Cloths (Men)");
+  const [subCategory, setSubCategory] = useState("T-Shirts");
   const [bestseller, setBestseller] = useState(false);
   const [sizes, setSizes] = useState([]);
   const [uploadProgress, setUploadProgress] = useState(0);
